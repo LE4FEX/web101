@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: HTML/CSS/JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Workshop: HTML/CSS/JS</h1>
+        <nav>
+            <a href="about">เกี่ยวกับ</a>
+            <a href="tasks">งาน</a>
+            <button id="toggleTheme" aria-pressed="false">Dark</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>เกี่ยวกับ</h2>
+            <p>หน้าทดลองเพื่อฝึก HTML, CSS และ Javascript</p>
+        </section>
+        <section id="tasks">
+            <h2>สิ่งที่ต้องทำ</h2>
+            <form id="todoForm" autocomplete="off">
+                <input id="todoInput" placeholder="เพิ่มงาน..." required/>
+                <button type="submit">เพิ่ม</button>
+            </form>
+            <div id="filters" role="group" aria-label="ตัวกรองงาน">
+                <label><input type="radio" name="filter" value="all" checked>ทั้งหมด</label>
+                <label><input type="radio" name="filter" value="active">ยังไม่เสร็จ</label>
+                <label><input type="radio" name="filter" value="done">เสร็จแล้ว</label>
+            </div>
+            <input id="searchInput" placeholder="ค้นหา..."/>
+            <div id="toolbar">
+                <span id="count">0 งานที่ยังไม่เสร็จ</span>
+                <div class="spacer"></div>
+                <select id="sortSelect">
+                    <option value="newest">ใหม่สุดก่อน</option>
+                    <option value="oldest">เก่าสุดก่อน</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                </select>
+                <button id="clearDone" type="button">ลบที่เสร็จแล้ว</button>
+            </div>
+            <ul id="todoList"></ul>
+        </section>
+    </main>
+
+    <footer class="container">© 2025</footer>
+    <script src="app.js" defer></script>
+</body>
+</html>
